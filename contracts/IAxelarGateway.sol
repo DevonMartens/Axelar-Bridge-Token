@@ -98,6 +98,17 @@ interface IAxelarGateway {
         bytes calldata payload
     ) external;
 
+    /*
+    @Dev: To call chain B from chain A and send some tokens along the way
+    @Params: `destinationChain`: The destination chain, which must be an EVM chain from Chain names.
+    Find your chain names here: `https://docs.axelar.dev/dev/build/chain-names`
+    @Params: `contractAddress`: The destination contract address, which must implement the IAxelarExecutable interface defined in IAxelarExecutable.sol.
+    @Params: `payload`: The payload bytes to pass to the destination contract.
+    @Params: `symbol`: The symbol of the token to transfer, which must be a supported asset.
+    `https://docs.axelar.dev/dev/build/contract-addresses/testnet`
+    @Params: `amount`: The amount of the token to transfer
+    */
+
     function callContractWithToken(
         string calldata destinationChain,
         string calldata contractAddress,
