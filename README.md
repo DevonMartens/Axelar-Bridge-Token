@@ -20,6 +20,10 @@
     PRIVATE_KEY =  PRIVATE KEY
     ```
 
+7. Deploy it
+
+```npx hardhat run scripts/deploy.js --network polygon_mumbai```
+
 For more help: 
 
 Deploy instructions 
