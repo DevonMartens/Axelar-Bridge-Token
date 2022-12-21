@@ -92,6 +92,13 @@ interface IAxelarGateway {
         uint256 amount
     ) external;
 
+    /*
+    @Dev: To call a contract on chain B from chain A, the user needs to call callContract on the gateway of chain A, specifying
+    @Params: `destinationChain`: The destination chain, which must be an EVM chain from Chain names.
+    @Params: `contractAddress`: The destination contract address, which must implement the IAxelarExecutable interface defined in IAxelarExecutable.sol.
+    @Params: `payload`: The payload bytes to pass to the destination contract.
+    */
+
     function callContract(
         string calldata destinationChain,
         string calldata contractAddress,
